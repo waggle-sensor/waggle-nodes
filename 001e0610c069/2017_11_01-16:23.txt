@@ -1,0 +1,140 @@
+
+** Finding Node connection info **
+** Found Node @ 50151. Connecting to device...
+
+--------------------
+Device Data: ODROIDC
+System Information:
+   Static hostname: 001e0610c069SD
+         Icon name: computer
+        Machine ID: 7a18bd66c48041c9a76bb5890b64483d
+           Boot ID: 4566ad38ca54492d9bd314104a64ad71
+  Operating System: Ubuntu 16.04.1 LTS
+            Kernel: Linux 3.10.96-154
+      Architecture: arm
+Uptime:  21:23:59 up 5 days, 1:40, 0 users, load average: 0.56, 0.40, 0.31
+Date: Wed Nov 1 21:23:59 UTC 2017
+
+Heartbeat Mode: always
+
+Device State: !!! Root Unlocked !!!
+
+FS State: !!! Root is RW !!!
+
+Devices:
+Wagman:TRUE
+Coresense:TRUE
+Modem:FALSE
+
+Network Interfaces:
+enxe8fcafc7a7e1 Link encap:Ethernet  HWaddr e8:fc:af:c7:a7:e1  
+          inet addr:192.168.1.78  Bcast:192.168.1.255  Mask:255.255.255.0
+eth0      Link encap:Ethernet  HWaddr 00:1e:06:10:c0:69  
+          inet addr:10.31.81.10  Bcast:10.31.81.255  Mask:255.255.255.0
+
+Disk Usage Information:
+/dev/mmcblk0p2  1.5G  1.5G     0 100% /
+
+Process and Waggle Services Information:
+  rabbitmq-server.service                                                                loaded active     running      RabbitMQ broker
+  waggle-epoch.service                                                                   loaded active     running      Maintains the date and time on the node.
+  waggle-heartbeat.service                                                               loaded active     running      Triggers Wagman heartbeat line.
+  waggle-monitor-connectivity.service                                                    loaded active     running      Monitors node controller connectivity status.
+  waggle-monitor-shutdown.service                                                        loaded active     running      Monitors shutdown signals.
+  waggle-monitor-system.service                                                          loaded active     running      Monitors node controller status.
+  waggle-monitor-wagman.service                                                          loaded active     running      Monitors Wagman status.
+  waggle-plugin-alphasense.service                                                       loaded active     running      Alphasense OPC-N2 plugin.
+  waggle-plugin-coresense.service                                                        loaded active     running      Coresense 3.1 plugin.
+  waggle-plugin-gps.service                                                              loaded active     running      GPS plugin.
+  waggle-reverse-tunnel.service                                                          loaded active     running      Maintains an SSH reverse tunnel on Beehive.
+  waggle-wagman-driver.service                                                           loaded active     running      Wagman Driver
+  waggle-wwan.service                                                                    loaded activating auto-restart ATT WWAN Client
+  waggle-core.target                                                                     loaded active     active       Waggle Core
+  waggle-platform.target                                                                 loaded active     active       Waggle Platform
+
+RabbitMQ status:
+
+1. Queues:
+
+2. Exchanges:
+
+3. Connections:
+
+4. Shovel Status:
+
+Repo Version:634b4e1339788dc8de23a2706d1ccba055f603b2 v2.6.0-3-g634b4e1
+
+--------------------
+Device Data: ODROID-XU3
+System Information:
+   Static hostname: 001e06305a13SD
+         Icon name: computer
+        Machine ID: dc87f36fc06c441a85ff7269ba4d50fb
+           Boot ID: 01085795689c4215a960e3b7b388b02a
+  Operating System: Ubuntu 16.04 LTS
+            Kernel: Linux 3.10.96-113
+      Architecture: arm
+Uptime:  21:24:15 up 5 days, 1:39, 0 users, load average: 1.49, 1.64, 1.73
+Date: Wed Nov 1 21:24:15 UTC 2017
+
+Heartbeat Mode: always
+
+Device State: !!! Root Unlocked !!!
+
+FS State: !!! Root is RW !!!
+
+Devices:
+Microphone:FALSE
+Top Cam:FALSE
+Bot Cam:TRUE
+
+Network Interfaces:
+enx001e06305a13 Link encap:Ethernet  HWaddr 00:1e:06:30:5a:13  
+          inet addr:10.31.81.51  Bcast:10.31.81.255  Mask:255.255.255.0
+
+Disk Usage Information:
+/dev/mmcblk1p2   15G  1.3G   13G   9% /
+
+Process and Waggle Services Information:
+  rabbitmq-server.service                                                                              loaded active running   RabbitMQ broker
+  waggle-heartbeat.service                                                                             loaded active running   Triggers Wagman heartbeat line.
+  waggle-image-exporter.service                                                                        loaded active running   Image Exporter
+  waggle-image-producer.service                                                                        loaded active running   Image Producer
+  waggle-core.target                                                                                   loaded active active    Waggle Core
+  waggle-platform.target                                                                               loaded active active    Waggle Platform
+
+RabbitMQ status:
+
+1. Queues:
+amq.gen-HrEN9nHg2XkgSEaT51Sl4g	0
+images	32
+
+2. Exchanges:
+
+3. Connections:
+Listing connections
+[::1]:49057 -> [::1]:5672	guest	7510
+
+Repo Version:634b4e1339788dc8de23a2706d1ccba055f603b2 v2.6.0-3-g634b4e1
+
+--------------------
+Wagman Data
+ID:  A30B003E84E2
+FW Version: hw 3.1 ker 1.0.4 time 1480978476 git b205
+Uptime:5 days 06 hours 21 minutes 05 seconds
+Boot Count: 3
+Boot Flags: WDRF BORF EXTRF PORF
+Date: 2017 11 1 21 24 37
+RTC Time: 1509571478
+Internal Environment: temperature=46.50 humidity=13.43
+Failure Counts: 0 0 30 0 0
+Current Usage: 144 272 384 128 112 112
+Thermistor Raw counts: 0 0 0 0 0
+NC boot medium selected: sd
+EP boot medium selected: sd
+VSN: 
+Dates on Devices:
+Wagman: 2017 11 1 21 24 48
+NC: Wed Nov 1 21:24:43 UTC 2017
+EP: Wed Nov 1 21:24:42 UTC 2017
+50151 - DLW02 | David Lary's 02 | UTexas, Dallas |
