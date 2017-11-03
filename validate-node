@@ -1,0 +1,98 @@
+#!/usr/bin/awk -f
+
+function inrange(x, a, b) {
+  return (a <= x) && (x <= b);
+}
+
+function allinrange(a, b) {
+  for (i = 1; i <= NF; i++) {
+    if ($i ~ "[0-9]" && !inrange($i, a, b))
+      return 0;
+  }
+
+  return 1;
+}
+
+BEGIN {
+  FS = "[ \t:=]"
+
+  # used to track the existance of each device
+  nc = 0
+  ep = 0
+  wm = 0
+
+  # (optimistically) tracks if an ssh connection was made
+  conn = 1;
+}
+
+END {
+  if (!conn)
+    exit 1
+  if (!nc)
+    print FILENAME, "nc missing"
+  if (!ep)
+    print FILENAME, "ep missing"
+  if (!wm)
+    print FILENAME, "wagman missing"
+  { print "Checked file..."FILENAME }
+}
+
+# give up on devices we didn't get a connection to
+/Connection refused/ { print FILENAME, "connection refused"; conn = 0; exit; }
+/Connection closed/ { print FILENAME, "connection closed"; conn = 0; exit; }
+
+# get current device
+/Device.*ODROIDC/ { device = "NC"; nc = 1 }
+/Device.*XU/ { device = "EP"; ep = 1 }
+/FW Version.*hw/ { device = "Wagman"; wm = 1 }
+
+# check diskusage issues
+/mmcblk0p/ && !(inrange($5, 80, 100)) { print FILENAME, $0 }
+
+# check wagman fw version
+/FW Version.*hw/ && !/a1e3/ { print FILENAME, $0 }
+
+# non-wellness heartbeat mode
+/Heartbeat Mode/ && !/wellness/ { print FILENAME, $0 }
+
+# check if system is locked
+/Device State/ && ! /Root Locked/ { print FILENAME, $0 }
+
+# check if filesystem is ro
+#/FS State/ && !/is RO/ { print FILENAME, $0 }
+
+# vsn missing
+/VSN:\s*$/ { print FILENAME, "vsn missing" }
+
+# check if any dates are way off
+/NC:/ && /UTC/ && !/2017/ { print FILENAME, $0 }
+/EP:/ && /UTC/ && !/2017/ { print FILENAME, $0 }
+/Date:/ && !/2017/ { print FILENAME, $0 }
+
+# check for missing devices
+/FALSE/ { print FILENAME, $0 }
+
+# check for failed systemd targets / services
+/target/ && !/active/ { print FILENAME, $0 }
+/service/ && !/running/ { print FILENAME, $0 }
+
+# check for nonzero device failure counts
+/Failure Counts/ && !allinrange(0, 2) { print FILENAME, $0 }
+
+# check for devices on mmc instead of sd
+/MMC/ { print FILENAME, device, "MMC" }
+
+# check if wagman temperature and humidity is sane
+/Environ/ && !(inrange($5, -10.0, 80.0) && inrange($7, 0.0, 100.0)) { print FILENAME, "wagman env", $5, $7 }
+
+# print any old repo versions
+/Repo/ && !/v2.[78]/ { print FILENAME, $0 }
+
+# check if all thermistors are sane
+/Thermistor/ && !allinrange(600, 1100) { print FILENAME, $0 }
+
+# check if all currents are sane
+/Current Usage/ && !allinrange(50, 500) { print FILENAME, $0 }
+
+# print any lines marked error
+/Error/ { print FILENAME, $0 }
