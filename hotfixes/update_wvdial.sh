@@ -90,6 +90,8 @@ if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     waggle-switch-to-safe-mode
     cp /tmp/wvwaggle.sh /usr/bin/wvwaggle.sh
+    chmod +x /usr/bin/wvwaggle.sh
+    ls -l /usr/bin/wvwaggle.sh
     waggle-switch-to-operation-mode
     echo "35846769b735cb18aa9f6ebd811f6b4c8c1dc9586dfcbe12aeca18708fbec316  /usr/bin/wvwaggle.sh" | sha256sum -c
     if [ $? == 0 ]; then
@@ -109,6 +111,8 @@ echo "35846769b735cb18aa9f6ebd811f6b4c8c1dc9586dfcbe12aeca18708fbec316  /tmp/wvw
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     cp /tmp/wvwaggle.sh ${OTHER_DISK_P2}/usr/bin/wvwaggle.sh
+    chmod +x ${OTHER_DISK_P2}/usr/bin/wvwaggle.sh
+    ls -l ${OTHER_DISK_P2}/usr/bin/wvwaggle.sh
     echo "35846769b735cb18aa9f6ebd811f6b4c8c1dc9586dfcbe12aeca18708fbec316  ${OTHER_DISK_P2}/usr/bin/wvwaggle.sh" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
