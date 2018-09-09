@@ -6,9 +6,6 @@ detect_system_info() {
   #
   . /usr/lib/waggle/core/scripts/detect_odroid_model.sh
   # returns ODROID_MODEL
-
-
-  #
   # detect MAC address
   #
   . /usr/lib/waggle/core/scripts/detect_mac_address.sh
