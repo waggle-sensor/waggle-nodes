@@ -84,7 +84,7 @@ declare -r OTHER_DISK_P1=/tmp/otherp1
 declare -r OTHER_DISK_P2=/tmp/otherp2
 declare -r OTHER_DISK_P3=/tmp/otherp3
 
-wget -quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/wvwaggle.sh" -O /tmp/wvwaggle.sh
+wget --quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/wvwaggle.sh" -O /tmp/wvwaggle.sh
 echo "35846769b735cb18aa9f6ebd811f6b4c8c1dc9586dfcbe12aeca18708fbec316  /tmp/wvwaggle.sh" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
