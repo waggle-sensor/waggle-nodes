@@ -104,9 +104,6 @@ echo "Updating the other media..."
 detect_system_info
 prepare_mountpoints
 echo "mounting ${OTHER_DISK_DEVICE_TYPE} data partition..."
-echo ""
-df -h
-echo ""
 mount ${OTHER_DISK_DEVICE}p2 ${OTHER_DISK_P2}/
 echo "35846769b735cb18aa9f6ebd811f6b4c8c1dc9586dfcbe12aeca18708fbec316  /tmp/wvwaggle.sh" | sha256sum -c
 if [ $? == 0 ]; then
@@ -120,7 +117,4 @@ if [ $? == 0 ]; then
     fi
 fi
 umount ${OTHER_DISK_P2}/
-echo ""
-df -h 
-echo ""
 echo "Done!"
