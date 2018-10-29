@@ -117,7 +117,6 @@ mount ${OTHER_DISK_DEVICE}p2 ${OTHER_DISK_P2}/
 echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /tmp/waggle_epoch.sh" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
-    cp /tmp/wvwaggle.sh ${OTHER_DISK_P2}/usr/bin/wvwaggle.sh
     cp /tmp/waggle_epoch.sh ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh
     cp /tmp/eplogin ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/eplogin
     chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh
