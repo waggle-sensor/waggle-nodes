@@ -98,6 +98,7 @@ if [ $? == 0 ]; then
     waggle-switch-to-safe-mode
     cp /tmp/waggle_epoch.sh /usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh
     cp /tmp/eplogin /usr/lib/waggle/nodecontroller/scripts/eplogin
+    systemctl restart waggle-epoch
     waggle-switch-to-operation-mode
     echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh" | sha256sum -c
     if [ $? == 0 ]; then
