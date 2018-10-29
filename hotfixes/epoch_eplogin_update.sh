@@ -87,8 +87,8 @@ declare -r OTHER_DISK_P3=/tmp/otherp3
 
 rm -rf /tmp/waggle_epoch.sh
 rm -rf /tmp/eplogin
-wget --quite "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/waggle_epoch.sh" -O /tmp/waggle_epoch.sh
-wget --quite "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/eplogin" -O /tmp/eplogin
+wget --quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/waggle_epoch.sh" -O /tmp/waggle_epoch.sh
+wget --quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/eplogin" -O /tmp/eplogin
 
 echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /tmp/waggle_epoch.sh" | sha256sum -c
 if [ $? == 0 ]; then
