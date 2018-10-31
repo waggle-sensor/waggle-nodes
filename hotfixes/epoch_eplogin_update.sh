@@ -90,7 +90,7 @@ rm -rf /tmp/eplogin
 wget --quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/waggle_epoch.sh" -O /tmp/waggle_epoch.sh
 wget --quiet "https://raw.githubusercontent.com/waggle-sensor/nodecontroller/master/scripts/eplogin" -O /tmp/eplogin
 
-echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /tmp/waggle_epoch.sh" | sha256sum -c
+echo "bdca8284441789b9d6b3c5ff6181f8dd95595f143f4216543cd5763d560e3b4b  /tmp/waggle_epoch.sh" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     chmod +x /tmp/eplogin
@@ -100,7 +100,7 @@ if [ $? == 0 ]; then
     cp /tmp/eplogin /usr/lib/waggle/nodecontroller/scripts/eplogin
     systemctl restart waggle-epoch
     waggle-switch-to-operation-mode
-    echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh" | sha256sum -c
+    echo "bdca8284441789b9d6b3c5ff6181f8dd95595f143f4216543cd5763d560e3b4b  /usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated primary disk."
@@ -115,14 +115,14 @@ prepare_mountpoints
 echo "mounting ${OTHER_DISK_DEVICE_TYPE} data partition..."
 mount ${OTHER_DISK_DEVICE}p2 ${OTHER_DISK_P2}/
 
-echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  /tmp/waggle_epoch.sh" | sha256sum -c
+echo "bdca8284441789b9d6b3c5ff6181f8dd95595f143f4216543cd5763d560e3b4b  /tmp/waggle_epoch.sh" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     cp /tmp/waggle_epoch.sh ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh
     cp /tmp/eplogin ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/eplogin
     chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh
     chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/eplogin
-    echo "e8587ffc3dd92e31c5f31f9ccc718f7f45fbfec7d77dcdf8df3c2885a81e0b5c  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh" | sha256sum -c
+    echo "bdca8284441789b9d6b3c5ff6181f8dd95595f143f4216543cd5763d560e3b4b  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/waggle_epoch.sh" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated secondary disk."
