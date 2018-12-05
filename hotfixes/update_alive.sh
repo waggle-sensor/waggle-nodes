@@ -116,9 +116,9 @@ mount ${OTHER_DISK_DEVICE}p2 ${OTHER_DISK_P2}/
 echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  /tmp/monitor-system-service" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
-    cp /tmp/monitor-connectivity-service ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
-    chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
-    echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
+    cp /tmp/monitor-system-service ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-system-service
+    chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-system-service
+    echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-system-service" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated secondary disk."
