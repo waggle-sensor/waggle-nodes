@@ -88,7 +88,7 @@ declare -r OTHER_DISK_P3=/tmp/otherp3
 rm -rf /tmp/monitor-connectivity-service
 wget --quiet "https://www.mcs.anl.gov/research/projects/waggle/downloads/monitor-connectivity-service" -O /tmp/monitor-connectivity-service
 
-echo "7836bfd418b8f808262ec7070e4af156c24035affbb6371cd5e355fc438b14e9  /tmp/monitor-connectivity-service" | sha256sum -c
+echo "e347ba6ba26e889588c26cc932cccb3b1286f272edbf7bd2761dfaee68eb0215  /tmp/monitor-connectivity-service" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     waggle-switch-to-safe-mode
@@ -96,7 +96,7 @@ if [ $? == 0 ]; then
     chmod +x /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
     systemctl restart waggle-monitor-system
     waggle-switch-to-operation-mode
-    echo "7836bfd418b8f808262ec7070e4af156c24035affbb6371cd5e355fc438b14e9  /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
+    echo "e347ba6ba26e889588c26cc932cccb3b1286f272edbf7bd2761dfaee68eb0215  /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated primary disk."
@@ -111,12 +111,12 @@ prepare_mountpoints
 echo "mounting ${OTHER_DISK_DEVICE_TYPE} data partition..."
 mount ${OTHER_DISK_DEVICE}p2 ${OTHER_DISK_P2}/
 
-echo "7836bfd418b8f808262ec7070e4af156c24035affbb6371cd5e355fc438b14e9  /tmp/monitor-connectivity-service" | sha256sum -c
+echo "e347ba6ba26e889588c26cc932cccb3b1286f272edbf7bd2761dfaee68eb0215  /tmp/monitor-connectivity-service" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
     cp /tmp/monitor-connectivity-service ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
     chmod +x ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
-    echo "7836bfd418b8f808262ec7070e4af156c24035affbb6371cd5e355fc438b14e9  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
+    echo "e347ba6ba26e889588c26cc932cccb3b1286f272edbf7bd2761dfaee68eb0215  ${OTHER_DISK_P2}/usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated secondary disk."
@@ -125,4 +125,3 @@ if [ $? == 0 ]; then
 fi
 umount ${OTHER_DISK_P2}/
 echo "Done!"
-
