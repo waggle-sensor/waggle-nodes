@@ -91,14 +91,12 @@ wget --quiet "https://www.mcs.anl.gov/research/projects/waggle/downloads/monitor
 echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  /tmp/monitor-system-service" | sha256sum -c
 if [ $? == 0 ]; then
     echo "Checked SHA256SUM of downloaded file, checks out fine..."
-    chmod +x /tmp/eplogin
-    chmod +x /tmp/waggle_epoch.sh
     waggle-switch-to-safe-mode
-    cp /tmp/monitor-system-service /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
-    chmod +x /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
+    cp /tmp/monitor-system-service /usr/lib/waggle/nodecontroller/scripts/monitor-system-service
+    chmod +x /usr/lib/waggle/nodecontroller/scripts/monitor-system-service
     systemctl restart waggle-monitor-system
     waggle-switch-to-operation-mode
-    echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
+    echo "b1f40f02fc291412d20f1442a2770b19e149ba17f21ac25b69a71429afa53e8e  /usr/lib/waggle/nodecontroller/scripts/monitor-system-service" | sha256sum -c
     if [ $? == 0 ]; then
         echo ""
         echo "Successfully updated primary disk."
