@@ -94,7 +94,7 @@ if [ $? == 0 ]; then
     waggle-switch-to-safe-mode
     cp /tmp/monitor-connectivity-service /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
     chmod +x /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service
-    systemctl restart waggle-monitor-system
+    systemctl restart waggle-monitor-connectivity.service
     waggle-switch-to-operation-mode
     echo "e347ba6ba26e889588c26cc932cccb3b1286f272edbf7bd2761dfaee68eb0215  /usr/lib/waggle/nodecontroller/scripts/monitor-connectivity-service" | sha256sum -c
     if [ $? == 0 ]; then
