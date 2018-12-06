@@ -1,5 +1,0 @@
-
-** Finding Node connection info **
-** Found Node @ 50151. Connecting to device...
-
-50151 - DLW02 | David Lary's 02 | UTexas, Dallas |

@@ -1,5 +1,0 @@
-
-** Finding Node connection info **
-** Found Node @ 50142. Connecting to device...
-
-50142 - DLW12 | David Lary's 12 | UTexas, Dallas |
